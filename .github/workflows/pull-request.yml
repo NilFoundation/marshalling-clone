@@ -9,16 +9,16 @@ on:
 jobs:
   handle-syncwith:
     name: Call Reusable SyncWith Handler
-    uses: NilFoundation/ci-cd/.github/workflows/reusable-handle-syncwith.yml@consistent-testing
+    uses: NilFoundation/ci-cd/.github/workflows/reusable-handle-syncwith.yml@826989171075a1fcaf531cadd01e954dd07d8d04
     with:
-      ci-cd-ref: ''
+      ci-cd-ref: '826989171075a1fcaf531cadd01e954dd07d8d04'
     secrets: inherit
 
   matrix-test:
     name: Call Reusable Crypto3 Testing
     needs:
       - handle-syncwith
-    uses: NilFoundation/ci-cd/.github/workflows/reusable-crypto3-testing.yml@consistent-testing
+    uses: NilFoundation/ci-cd/.github/workflows/reusable-crypto3-testing.yml@826989171075a1fcaf531cadd01e954dd07d8d04
     with:
-      submodules-refs: ${{ needs.handle-syncwith.outputs.prs-shas }}
+      submodules-refs: ${{ needs.handle-syncwith.outputs.prs-refs }}
     secrets: inherit
