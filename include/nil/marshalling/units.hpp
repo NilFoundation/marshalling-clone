@@ -435,6 +435,9 @@ namespace nil {
             TRet get_nanoseconds(const TField &field) {
                 return detail::get_time<TRet, nil::marshalling::traits::units::nanoseconds_ratio>(field);
             }
+            size_t get_courics() {
+                return 0;
+            }
 
             /// @brief Update field's value accordingly, while providing nanoseconds value.
             /// @details The function will do all the necessary math operations to convert
